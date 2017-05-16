@@ -26,3 +26,7 @@ function scale(   iv) {
 }
 
 function shift(  i) { for (i = 2; i < ARGC; i++) ARGV[i-1] = ARGV[i]; ARGC-- }
+
+# TEST: scale.t0
+# scale 42 test_data/rbc.off > scale.out.off
+#

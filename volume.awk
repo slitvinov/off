@@ -31,3 +31,7 @@ function volume0(   V, ax, ay, az, bx, by, bz) { /* volume of triangle */
     V /= 6
     return V
 }
+
+# TEST: volume.t0
+# volume test_data/rbc.off > volume.out.txt
+#
