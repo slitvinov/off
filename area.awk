@@ -9,7 +9,6 @@ BEGIN {
     read_header()
     read_vert()
     read_faces()
-    ne = 0 # no edges
 
     print area()
 }
@@ -33,7 +32,7 @@ function area0(   A, ax, ay, az, bx, by, bz) { /* area of triangle */
 
     #### A = 1/2 * (a x b)
     A = sq(ay*bz-az*by) + sq(az*bx-ax*bz) + sq(ax*by-ay*bx)
-    A /= 2
+    A = sqrt(A)/2
     return A
 }
 
