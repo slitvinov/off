@@ -13,16 +13,19 @@
 # [1] https://en.wikipedia.org/wiki/OFF_(file_format)
 # [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
 
-function nl() { # next line
-    getline < fn
+function emptyp() { return $0 ~ /^[ \t]*$/ }
+function strip_comm()   { gsub(/#.*/, "") }
+
+function nl( ) { # next line
+    do {
+	if (getline < fn == 0) return
+	strip_comm()
+    } while (emptyp())
 }
+
 
 function pl() { # print a new line
     printf "\n"
-}
-
-function emptyp() {
-    return $0 ~ /^[ \t]*$/
 }
 
 function ini() {
@@ -84,5 +87,8 @@ BEGIN {
 }
 
 # TEST: off2ud.t0
-# ./off2ud.awk test_data/rbc.off > rbc.out.dat
+# ./off2ud.awk test_data/rbc.off  > rbc.out.dat
+#
+# TEST: off2ud.t1
+# ./off2ud.awk test_data/tetra.off > rbc.out.dat
 #
