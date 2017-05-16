@@ -31,4 +31,3 @@ function volume0(   V, ax, ay, az, bx, by, bz) { /* volume of triangle */
     V /= 6
     return V
 }
-
