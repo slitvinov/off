@@ -139,3 +139,7 @@ function d(i, j,  k) { # double
     mzz[k] = 1/2*(zz[i] + zz[j])
     return k
 }
+
+# TEST: refine.t0
+# ./refine.awk test_data/two.off  > re.out.off
+#
