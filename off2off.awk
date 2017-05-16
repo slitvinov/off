@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-# Convert uDeviceX old format to off [1, 2]
+# read and write off [1, 2]
 #
 # OFF numVertices numFaces numEdges
 # x y z
