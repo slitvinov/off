@@ -139,5 +139,5 @@ function nl( ) { # next line
 }
 
 # TEST: refine.t0
-# ./refine test_data/two.off  > re.out.off
+# ./refine.awk test_data/two.off  > re.out.off
 #
