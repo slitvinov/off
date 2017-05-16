@@ -75,7 +75,6 @@ BEGIN {
     write_faces()
 }
 
-
 # TEST: ud2off.t1
 # ./ud2off.awk test_data/rbc.dat > rbc.out.off
 #

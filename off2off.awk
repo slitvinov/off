@@ -28,7 +28,7 @@ function init() {
 
 function read_header() {
     nl() # skip OFF
-    nl(); nv = $1; nf = $2
+    nl(); nv = $1; nf = $2; ne = $3
 }
 
 function read_vert(   iv) {
@@ -41,7 +41,9 @@ function read_vert(   iv) {
 function read_faces(  ifa, ib) {
     for (ifa = 0; ifa < nf; ifa++) {
 	nl(); ib = 2
-	ff[ifa] = $(ib++) " " $(ib++) " " $(ib++)
+	ff0[ifa] = $(ib++)
+	ff1[ifa] = $(ib++)
+	ff2[ifa] = $(ib++)	
     }
 }
 
@@ -51,14 +53,13 @@ function write_header() {
 }
 
 function write_vert(   iv) {
-    for (iv = 0; iv < nv; iv++)
-	print xx[iv], yy[iv], zz[iv]
+    for (iv = 0; iv < nv; iv++) print rr[iv]
 }
 
-function write_faces(   ifa) {
-    nv_per_face = 3
+function write_faces(   ifa, nvpf) {
+    nvpf = 3
     for (ifa = 0; ifa < nf; ifa++)
-	print nv_per_face, f0[ifa], f1[ifa], f2[ifa]
+	print nvpf, ff0[ifa], ff1[ifa], ff2[ifa]
 }
 
 BEGIN {
@@ -73,7 +74,6 @@ BEGIN {
     write_faces()
 }
 
-
-# TEST: ud2off.t1
-# ./ud2off.awk test_data/rbc.dat > rbc.out.off
+# TEST: off2off.t0
+# ./off2off.awk test_data/rbc.off > rbc.out.off
 #
