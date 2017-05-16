@@ -17,4 +17,5 @@ b: r2 - r0;
 
 ksi: cp(a, b);
 Vk:  1/6*dot(ksi, cm);
-grind(gcfac(factor(Vk)));
+Vk: gcfac(factor(Vk));
+grind(Vk);
