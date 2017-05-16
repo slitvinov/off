@@ -13,17 +13,23 @@
 # [1] https://en.wikipedia.org/wiki/OFF_(file_format)
 # [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
 
-function emptyp() { return $0 ~ /^[ \t]*$/ }
-function strip_comm()   { gsub(/#.*/, "") }
-function nl( ) { # next line
-    do {
-	if (getline < fn == 0) return
-	strip_comm()
-    } while (emptyp())
-}
+function init() { fn = ARGC < 2 ? "-" : ARGV[1] }
 
-function init() {
-    fn = ARGC < 2 ? "-" : ARGV[1]
+BEGIN {
+    init()
+    read_header()
+    read_vert()
+    read_faces()
+    ne = 0 # no edges
+
+    refine()
+    bindex()
+    build_vert()
+    build_faces()
+
+    write_header()
+    write_vert()
+    write_faces()
 }
 
 function read_header() {
@@ -61,23 +67,6 @@ function write_faces(   ifa, nvpf) {
     nvpf = 3
     for (ifa = 0; ifa < nf; ifa++)
 	print nvpf, ff0[ifa], ff1[ifa], ff2[ifa]
-}
-
-BEGIN {
-    init()
-    read_header()
-    read_vert()
-    read_faces()
-    ne = 0 # no edges
-
-    refine()
-    bindex()
-    build_vert()
-    build_faces()
-
-    write_header()
-    write_vert()
-    write_faces()
 }
 
 function build_faces(   k0, k1, k2, f0, f1, f2, iv, ifa) {
@@ -138,6 +127,15 @@ function d(i, j,  k) { # double
     myy[k] = 1/2*(yy[i] + yy[j])
     mzz[k] = 1/2*(zz[i] + zz[j])
     return k
+}
+
+function emptyp() { return $0 ~ /^[ \t]*$/ }
+function strip_comm()   { gsub(/#.*/, "") }
+function nl( ) { # next line
+    do {
+	if (getline < fn == 0) return
+	strip_comm()
+    } while (emptyp())
 }
 
 # TEST: refine.t0
