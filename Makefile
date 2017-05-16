@@ -2,7 +2,7 @@ BIN = $(HOME)/bin
 C   = $(HOME)/.udx # where to install config files
 
 PROG = refine
-CONF = off.awk
+CONF = off.awk refine.awk
 
 install: install_prog install_conf
 

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+C=$HOME/.udx
+awk -f "$C/off.awk" -f "$C/refine.awk" "$@"
+
