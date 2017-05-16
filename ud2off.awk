@@ -13,9 +13,6 @@
 # [1] https://en.wikipedia.org/wiki/OFF_(file_format)
 # [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
 
-# TEST: ud2off.t1
-# ./ud2off.awk test_data/rbc.dat > rbc.out.off
-
 function nl() { # next line
     getline < fn
 }
@@ -77,3 +74,8 @@ BEGIN {
     write_vert()
     write_faces()
 }
+
+
+# TEST: ud2off.t1
+# ./ud2off.awk test_data/rbc.dat > rbc.out.off
+#
