@@ -45,10 +45,10 @@ function read_faces(  ifa, ib) {
 
 function write_header(   ne) {
     nd = ne = 3 * nf / 2 # number of dih; number of edges
-    print " " nv
-    print " " ne
-    print " " nf
-    print " " nd
+    print nv
+    print ne
+    print nf
+    print nd
     pl()
 }
 
