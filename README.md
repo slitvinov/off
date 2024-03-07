@@ -4,7 +4,7 @@
 
 [OFF references](http://www.geomview.org/docs/html/OFF.html)
 
-## Programs
+<h2>Programs</h2>
 * [off.volume](volume.awk) - compute volume of triangulated surface
 * [off.area](area.awk) - compute area of triangulated surface
 * [off.scale](scale.awk) - scale coordinates
