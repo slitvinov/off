@@ -8,6 +8,7 @@
 * [off.volume](volume.awk) - compute volume of triangulated surface
 * [off.area](area.awk) - compute area of triangulated surface
 * [off.scale](scale.awk) - scale coordinates
+* [off.project](project.awk) - project all vertices on a unit sphere
 * [off.refine](refine.awk) - refine triangulated surface
 
 <h2>Install</h2>

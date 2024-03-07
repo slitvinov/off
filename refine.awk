@@ -1,5 +1,3 @@
-#!/usr/bin/awk -f
-
 function init() { fn = ARGC < 2 ? "-" : ARGV[1] }
 
 BEGIN {

@@ -1,18 +1,3 @@
-#!/usr/bin/awk -f
-
-# Convert off [1, 2] to uDeviceX old format
-#
-# OFF numVertices numFaces numEdges
-# x y z
-# x y z
-# ... numVertices like above
-# NVertices v1 v2 v3 ... vN
-# MVertices v1 v2 v3 ... vM
-# ... numFaces like above
-
-# [1] https://en.wikipedia.org/wiki/OFF_(file_format)
-# [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
-
 function emptyp() { return $0 ~ /^[ \t]*$/ }
 function strip_comm()   { gsub(/#.*/, "") }
 
@@ -87,8 +72,8 @@ BEGIN {
 }
 
 # TEST: off2ud.t0
-# ./off2ud.awk test_data/rbc.off  > rbc.out.dat
+# awk -f off2ud.awk test_data/rbc.off  > rbc.out.dat
 #
 # TEST: off2ud.t1
-# ./off2ud.awk test_data/tetra.off > rbc.out.dat
+# awk -f off2ud.awk test_data/tetra.off > rbc.out.dat
 #

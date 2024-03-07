@@ -1,18 +1,3 @@
-#!/usr/bin/awk -f
-
-# Convert uDeviceX old format to off [1, 2]
-#
-# OFF numVertices numFaces numEdges
-# x y z
-# x y z
-# ... numVertices like above
-# NVertices v1 v2 v3 ... vN
-# MVertices v1 v2 v3 ... vM
-# ... numFaces like above
-
-# [1] https://en.wikipedia.org/wiki/OFF_(file_format)
-# [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
-
 function nl() { # next line
     getline < fn
 }
@@ -76,5 +61,5 @@ BEGIN {
 }
 
 # TEST: ud2off.t1
-# ./ud2off.awk test_data/rbc.dat > rbc.out.off
+# awk -f ud2off.awk test_data/rbc.dat > rbc.out.off
 #
