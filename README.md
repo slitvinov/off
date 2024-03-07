@@ -1,4 +1,4 @@
-<h1>Tools for off files</h1>
+<h1>Tools for OFF files</h1>
 
 <h2>Introduction</h2>
 
