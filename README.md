@@ -15,13 +15,14 @@
 ```
 $ make
 ```
+</pre>
 
+## Examples
 <pre>
-```
 $ off.area test_data/icosa.off
 3.8298165592841229e+01
 $ off.volume test_data/icosa.off
 2.0289205728439306e+01
 $ off.scale < test_data/icosa.off
 *** output flushed ***
-```
+</pre>
