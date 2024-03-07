@@ -1,6 +1,7 @@
-# Tools for off files
+<h1>Tools for off files</h1>
 
-## Introduction
+<h2>Introduction</h2>
+
 * [off references](http://www.geomview.org/docs/html/OFF.html)
 
 ## Programs
@@ -9,7 +10,7 @@
 * [off.scale](scale.awk) - scale coordinates
 * [off.refine](refine.awk) - refine triangulated surface
 
-## Install
+<h2>Install</h2>
 
 <pre>
 ```
@@ -17,7 +18,8 @@ $ make
 ```
 </pre>
 
-## Examples
+<h2>Examples</h2>
+
 <pre>
 $ off.area test_data/icosa.off
 3.8298165592841229e+01
@@ -26,3 +28,9 @@ $ off.volume test_data/icosa.off
 $ off.scale < test_data/icosa.off
 *** output flushed ***
 </pre>
+
+<h2>Refine</h2>
+
+<p align="center"><img src="img/0.png"/></p>
+<p align="center"><img src="img/1.png"/></p>
+<p align="center"><img src="img/2.png"/></p>
