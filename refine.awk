@@ -1,18 +1,5 @@
 #!/usr/bin/awk -f
 
-# refine off file [1, 2]
-#
-# OFF numVertices numFaces numEdges
-# x y z
-# x y z
-# ... numVertices like above
-# NVertices v1 v2 v3 ... vN
-# MVertices v1 v2 v3 ... vM
-# ... numFaces like above
-
-# [1] https://en.wikipedia.org/wiki/OFF_(file_format)
-# [2] http://shape.cs.princeton.edu/benchmark/documentation/off_format.html
-
 function init() { fn = ARGC < 2 ? "-" : ARGV[1] }
 
 BEGIN {
