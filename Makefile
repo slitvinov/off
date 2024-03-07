@@ -1,12 +1,11 @@
-BIN = $(HOME)/bin
-C   = $(HOME)/.udx # where to install config files
+BIN = $(HOME)/.local/bin
+C   = $(HOME)/.udx
 
 PROG = refine scale area volume
 CONF = off.awk refine.awk scale.awk area.awk volume.awk
 
-install: install_prog install_conf
-
-install_prog:; mkdir -p $(BIN) && cp $(PROG) $(BIN)
-install_conf:; mkdir -p $(C)   && cp $(CONF) $(C)
-
-.PHONY: install install_conf install_prog
+install:
+	mkdir -p '$(BIN)'
+	for i in $(PROG); do cp $$i '$(BIN)'/off.$$i; chmod +x off.$$i; done
+	mkdir -p $C
+	cp $(CONF) $C

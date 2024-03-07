@@ -10,7 +10,7 @@ BEGIN {
     read_vert()
     read_faces()
 
-    print area()
+    printf "%.16e\n", area()
 }
 
 function area(   ifa, A) {
@@ -39,5 +39,5 @@ function area0(   A, ax, ay, az, bx, by, bz) { /* area of triangle */
 function sq(x) { return x*x }
 
 # TEST: area.t0
-# area test_data/rbc.off > area.out.txt
+# off.area test_data/rbc.off > area.out.txt
 #

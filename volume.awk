@@ -9,15 +9,14 @@ BEGIN {
     read_header()
     read_vert()
     read_faces()
-
-    print volume()
+    printf "%.16e\n", volume()
 }
 
 function volume(   ifa, V) {
     V = 0
     for (ifa = 0; ifa < nf; ifa++) {
 	f0 = ff0[ifa]; f1 = ff1[ifa]; f2 = ff2[ifa]
-	
+
 	x0 = xx[f0]; y0 = yy[f0]; z0 = zz[f0]
 	x1 = xx[f1]; y1 = yy[f1]; z1 = zz[f1]
 	x2 = xx[f2]; y2 = yy[f2]; z2 = zz[f2]
@@ -33,5 +32,5 @@ function volume0(   V, ax, ay, az, bx, by, bz) { /* volume of triangle */
 }
 
 # TEST: volume.t0
-# volume test_data/rbc.off > volume.out.txt
+# off.volume test_data/rbc.off > volume.out.txt
 #

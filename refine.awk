@@ -93,5 +93,5 @@ function d(i, j,  k) { # double
 }
 
 # TEST: refine.t0
-# refine test_data/two.off  > re.out.off
+# off.refine test_data/two.off  > re.out.off
 #
