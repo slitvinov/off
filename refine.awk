@@ -9,7 +9,12 @@ BEGIN {
 
     refine()
     bindex()
-    build_vert()
+
+    if ("REFINE_PROJECT" in ENVIRON) {
+        build_vert_project()
+    } else
+        build_vert()
+
     build_faces()
 
     write_header()
@@ -19,18 +24,28 @@ BEGIN {
 
 function build_faces(   k0, k1, k2, f0, f1, f2, iv, ifa) {
     for (ifa = 0; ifa < nf; ifa++) {
-	k0 = gg0[ifa]; k1 = gg1[ifa]; k2 = gg2[ifa]
-	f0 = idx[k0];  f1 = idx[k1] ; f2 = idx[k2]
-	ff0[ifa] = f0; ff1[ifa] = f1; ff2[ifa] = f2
+        k0 = gg0[ifa]; k1 = gg1[ifa]; k2 = gg2[ifa]
+        f0 = idx[k0];  f1 = idx[k1] ; f2 = idx[k2]
+        ff0[ifa] = f0; ff1[ifa] = f1; ff2[ifa] = f2
     }
 }
 
 function build_vert(   k, iv) {
     for (k in mxx) {
-	iv = idx[k]
-	xx[iv] = mxx[k]
-	yy[iv] = myy[k]
-	zz[iv] = mzz[k]
+        iv = idx[k]
+        xx[iv] = mxx[k]
+        yy[iv] = myy[k]
+        zz[iv] = mzz[k]
+    }
+}
+
+function build_vert_project(   k, iv, r) {
+    for (k in mxx) {
+        iv = idx[k]
+        r = sqrt(mxx[k]**2 + myy[k]**2 + mzz[k]**2)
+        xx[iv] = mxx[k] / r
+        yy[iv] = myy[k] / r
+        zz[iv] = mzz[k] / r
     }
 }
 
@@ -46,7 +61,7 @@ function refine() {
 function refine_faces(  ifa) {
     I = 0 # new faces (updated in `reg')
     for (ifa = 0; ifa < nf; ifa++)
-	refine_face(ff0[ifa], ff1[ifa], ff2[ifa])
+        refine_face(ff0[ifa], ff1[ifa], ff2[ifa])
     nf = I
 }
 
