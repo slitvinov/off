@@ -1,8 +1,8 @@
 BIN = $(HOME)/.local/bin
 C   = $(HOME)/.udx
 
-PROG = refine scale area volume project
-CONF = off.awk refine.awk scale.awk area.awk volume.awk project.awk
+PROG = refine scale area volume
+CONF = off.awk refine.awk scale.awk area.awk volume.awk
 
 install:
 	mkdir -p '$(BIN)'

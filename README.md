@@ -9,7 +9,6 @@
   <li><a href="volume.awk">off.volume</a> – compute volume of triangulated surface</li>
   <li><a href="area.awk">off.area</a> – compute area of triangulated surface</li>
   <li><a href="scale.awk">off.scale</a> – scale coordinates</li>
-  <li><a href="project.awk">off.project</a> – project all vertices on a unit sphere</li>
   <li><a href="refine.awk">off.refine</a> – refine triangulated surface</li>
 </ul>
 
