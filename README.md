@@ -33,6 +33,10 @@ $ off.scale 10 < test_data/icosa.off
 
 <h2>Refine</h2>
 
+A 1-to-4 triangle subdivision, also known as **Linear Subdivision** or
+**Simple Subdivision**. Each triangular face is split into four
+smaller triangles by connecting the midpoints of its edges.
+
 <p align="center">
 <img src="img/0.png" width=200/>
 <img src="img/1.png" width=200/>
