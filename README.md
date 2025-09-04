@@ -2,6 +2,10 @@
 
 <h2>Introduction</h2>
 
+A collection of awk scripts to manipulate OFF (Object File Format)
+files. These tools can be used to calculate the volume and area of
+triangulated surfaces, scale coordinates, and refine the mesh.
+
 [OFF references](http://www.geomview.org/docs/html/OFF.html)
 
 <h2>Programs</h2>
