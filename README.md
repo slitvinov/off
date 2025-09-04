@@ -3,7 +3,7 @@
 <h2>Introduction</h2>
 
 A collection of awk scripts to manipulate
-[OFF (Object File Format)]((http://www.geomview.org/docs/html/OFF.html)
+[OFF (Object File Format)](http://www.geomview.org/docs/html/OFF.html)
 files. These tools can be used to calculate the volume and area of
 triangulated surfaces, scale coordinates, and refine the mesh.
 
