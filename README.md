@@ -5,14 +5,15 @@
 [OFF references](http://www.geomview.org/docs/html/OFF.html)
 
 <h2>Programs</h2>
-* [off.volume](volume.awk) - compute volume of triangulated surface
-* [off.area](area.awk) - compute area of triangulated surface
-* [off.scale](scale.awk) - scale coordinates
-* [off.project](project.awk) - project all vertices on a unit sphere
-* [off.refine](refine.awk) - refine triangulated surface
+<ul>
+  <li><a href="volume.awk">off.volume</a> – compute volume of triangulated surface</li>
+  <li><a href="area.awk">off.area</a> – compute area of triangulated surface</li>
+  <li><a href="scale.awk">off.scale</a> – scale coordinates</li>
+  <li><a href="project.awk">off.project</a> – project all vertices on a unit sphere</li>
+  <li><a href="refine.awk">off.refine</a> – refine triangulated surface</li>
+</ul>
 
 <h2>Install</h2>
-
 <pre>
 $ make
 </pre>
